@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# crontab -e
+# @reboot /home/orangepi/ctx-idrw-203/reader.sh
+
+cd "$(dirname "$0")"
 echo "Start polling $(date)" | tee -a rf125.log
 POLL_LINE='sudo ./rfid_app/ctx-idrw-203 -r'
 TS_LINE='date --iso-8601=seconds'
